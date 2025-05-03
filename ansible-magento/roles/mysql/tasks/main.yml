@@ -1,0 +1,56 @@
+---
+- name: Check available Amazon Linux Extras topics
+  command: amazon-linux-extras list
+  register: extras_list
+
+- name: Enable MySQL 8.0 if available
+  when: "'mysql8.0' in extras_list.stdout"
+  command: amazon-linux-extras enable mysql8.0
+  args:
+    creates: /etc/amazon-linux-extras-enabled-mysql8.0
+
+- name: Enable MySQL (generic) if available
+  when: "'mysql' in extras_list.stdout"
+  command: amazon-linux-extras enable mysql
+  args:
+    creates: /etc/amazon-linux-extras-enabled-mysql
+
+- name: Enable MariaDB if MySQL is not available
+  when: "'lamp-mariadb10.2-php7.2' in extras_list.stdout"
+  command: amazon-linux-extras enable lamp-mariadb10.2-php7.2
+  args:
+    creates: /etc/amazon-linux-extras-enabled-mariadb
+
+- name: Install MySQL or MariaDB and dependencies
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ 'mysql-server' if 'mysql8.0' in extras_list.stdout or 'mysql' in extras_list.stdout else 'mariadb-server' }}"
+    - python2-PyMySQL
+
+- name: Start and enable MySQL/MariaDB service
+  service:
+    name: "{{ 'mysqld' if 'mysql8.0' in extras_list.stdout or 'mysql' in extras_list.stdout else 'mariadb' }}"
+    state: started
+    enabled: true
+
+- name: Create MySQL/MariaDB configuration file
+  template:
+    src: my.cnf.j2
+    dest: /etc/my.cnf
+  notify:
+    - restart mysql
+
+- name: Create DB user for Magento
+  mysql_user:
+    name: "{{ magento_db_user }}"
+    password: "{{ magento_db_password }}"
+    priv: '*.*:ALL'
+    state: present
+
+- name: Create DB schema for Magento
+  mysql_db:
+    name: "{{ magento_db_name }}"
+    state: present
+

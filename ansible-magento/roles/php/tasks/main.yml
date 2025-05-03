@@ -1,0 +1,45 @@
+---
+- name: Enable Amazon Linux Extras for PHP
+  command: amazon-linux-extras enable php7.2
+  args:
+    creates: /etc/amazon-linux-extras-enabled-php7.2
+
+- name: Install PHP and dependencies
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - php
+    - php-ctype
+    - php-curl
+    - php-dom
+    - php-gd
+    - php-intl
+    - php-mbstring
+    - php-hash
+    - php-openssl
+    - php-simplexml
+    - php-soap
+    - php-spl
+    - php-libxml
+    - php-xsl
+    - php-json
+    - php-iconv
+    - php-bcmath
+    - php-pdo
+    - php-mysqlnd
+    - php-redis
+    - vim
+    - git
+
+
+- name: Bump Memory Limit
+  lineinfile:
+    path: /etc/php.ini
+    regexp: 'memory_limit = 128M'
+    line: 'memory_limit = 8192M'
+
+- name: Restart HTTPD to get use memory_limit
+  service:
+    name: httpd
+    state: restarted
