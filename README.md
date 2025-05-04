@@ -5,6 +5,11 @@
 🚀 **Build an E-Commerce MVP on AWS in Under 2 Hours**  
 Real-World DevOps Project Using **Terraform**, **Ansible**, & **Magento**
 
+![PORTFOLIO PROJECTS_AWS - MODULE 7_THUMBNAIL](https://github.com/user-attachments/assets/6721bdbf-aece-436d-94d4-f6ca185440eb)
+
+
+
+
 ---
 
 ## 🛠️ Role: Cloud Engineer | DevOps Implementation | Real-World Scenario
@@ -29,6 +34,10 @@ This project demonstrates how to deploy a Minimum Viable Product (MVP) of an e-c
 - **AWS EC2** for compute resources  
 
 By leveraging **Infrastructure as Code (IaC)**, the solution is fast to deploy, reusable, scalable, and easy to maintain.
+
+![PORTFOLIO PROJECTS_AWS - MODULE 7_ARCHITECTURE](https://github.com/user-attachments/assets/d8556358-79e3-4a03-82b6-88ba64758c68)
+
+
 
 ---
 
@@ -104,6 +113,10 @@ By leveraging **Infrastructure as Code (IaC)**, the solution is fast to deploy, 
 ✅ Automated both infrastructure and software deployment — no manual steps beyond IP configuration and Ansible variable changes.  
 ✅ Demonstrated how DevOps practices (IaC, configuration management, automation) can deliver fast, reliable deployments — ideal for startups and lean teams.  
 
+<img width="1440" alt="Screenshot 2025-05-03 at 06 07 36" src="https://github.com/user-attachments/assets/c68ca564-b991-4285-ab0f-a3cbe62b995a" />
+
+
+
 ---
 
 ## 📉 Challenges Faced
@@ -132,6 +145,13 @@ After deploying, visit:
 - **Admin Dashboard:** `http://<EC2_PUBLIC_IP>/securelocation`  
   - **User:** Admin  
   - **Password:** Strong123Password#  
+
+<img width="1440" alt="Screenshot 2025-05-03 at 06 08 03" src="https://github.com/user-attachments/assets/fcbdcc10-3b4b-438b-86a2-85ad2758ead4" />
+
+
+<img width="1440" alt="Screenshot 2025-05-03 at 06 08 15" src="https://github.com/user-attachments/assets/2079a304-b1ef-4da9-8805-8bcc2c44c60a" />
+
+<img width="1440" alt="Screenshot 2025-05-03 at 06 08 30" src="https://github.com/user-attachments/assets/d608b510-4cb7-4df9-86a1-115bae8c16eb" />
 
 ---
 
