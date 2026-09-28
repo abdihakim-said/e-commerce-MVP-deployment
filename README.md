@@ -3,7 +3,7 @@
 # E-Commerce MVP Deployment on AWS
 
 🚀 **Build an E-Commerce MVP on AWS in Under 2 Hours**  
-Real-World DevOps Project Using **Terraform**, **Ansible**, & **Magento**
+A Hands-On Lab with **Terraform**, **Ansible**, & **Magento**
 
 ![PORTFOLIO PROJECTS_AWS - MODULE 7_THUMBNAIL](https://github.com/user-attachments/assets/6721bdbf-aece-436d-94d4-f6ca185440eb)
 
@@ -12,7 +12,7 @@ Real-World DevOps Project Using **Terraform**, **Ansible**, & **Magento**
 
 ---
 
-## 🛠️ Role: Cloud Engineer | DevOps Implementation | Real-World Scenario
+## 🛠️ Hands-on lab, built in my own AWS account
 
 ### 🧩 Problem Statement
 Many startups or small businesses need to launch e-commerce platforms quickly to validate their idea or reach the market early — but without sacrificing scalability, maintainability, and automation.  
@@ -25,7 +25,7 @@ How can we deploy a fully functional Magento-based e-commerce platform on AWS in
 
 ## ✅ Solution Overview
 
-This project demonstrates how to deploy a Minimum Viable Product (MVP) of an e-commerce website in an automated, scalable, and production-ready way using:
+I built this as a hands-on lab: deploy a Minimum Viable Product (MVP) of an e-commerce website on AWS, automated end to end, using:
 
 - **Terraform** for infrastructure provisioning  
 - **Ansible** for configuration management and software installation  
@@ -143,8 +143,7 @@ By leveraging **Infrastructure as Code (IaC)**, the solution is fast to deploy, 
 After deploying, visit:  
 - **Storefront:** `http://<EC2_PUBLIC_IP>`  
 - **Admin Dashboard:** `http://<EC2_PUBLIC_IP>/securelocation`  
-  - **User:** Admin  
-  - **Password:** Strong123Password#  
+  - Log in with the admin credentials you set in `ansible-magento/group_vars/all.yml`.
 
 <img width="1440" alt="Screenshot 2025-05-03 at 06 08 03" src="https://github.com/user-attachments/assets/fcbdcc10-3b4b-438b-86a2-85ad2758ead4" />
 
@@ -182,5 +181,5 @@ All code used in this project, including Terraform and Ansible files, is availab
 --- 
 
 ✨ **Final Thoughts**  
-This real-world scenario demonstrates the power of DevOps and Cloud Engineering to deliver fast, scalable, and production-ready solutions with minimal human effort.  
+This lab shows how far Terraform and Ansible get you in a couple of hours. It is a single EC2 instance, so it is an MVP, not a production architecture: there is no load balancer, no managed database, no backups and no TLS. Next steps for a real launch: RDS for MySQL, ElastiCache for Redis, an ALB with TLS, DNS, and backups.  
 This project proves that even complex platforms like Magento can be fully automated using the right tools and mindset.

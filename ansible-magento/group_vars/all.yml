@@ -30,7 +30,7 @@ magento_admin_first: Admin
 magento_admin_last: Surname
 magento_admin_email: admin@email.com
 magento_admin_user: Admin
-magento_admin_pass: Strong123Password#
+magento_admin_pass: "CHANGE_ME"  # set your own; never commit a real password
 
 magento_admin_location: securelocation
 
